@@ -1,4 +1,4 @@
-fn main() {
+fn impelmenting_trait_on_type() {
     pub trait Summary {
         fn summarize(&self) -> String;
     }
@@ -36,4 +36,8 @@ fn main() {
         retweet: false,
     };
     println!("1 new tweet: {}", tweet.summarize());
+}
+
+fn main() {
+    impelmenting_trait_on_type();
 }
