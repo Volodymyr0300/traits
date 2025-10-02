@@ -29,6 +29,27 @@ fn default_implementation() {
     println!("1 new tweet: {}", tweet.summarize());
 }
 
+fn traits_as_parameters() {
+    pub trait Summary {
+        fn summarize_author(&self) -> String;
+
+        fn summarize(&self) -> String {
+            format!("(Read more from {}...)", self.summarize_author())
+        }
+    }
+    
+    pub fn notify<T: Summary>(item1: T, item2: T) {
+        println!("Breaking news! {}", item.summarize());
+    }
+
+
+    // pub fn notify(item: impl Summary + Display) {};  // syntax sugar
+    // pub fn notify<T: Summary + Display>(item: T) {};  // same as above
+
+
+}
+
 fn main() {
     default_implementation();
+    traits_as_parameters();
 }
