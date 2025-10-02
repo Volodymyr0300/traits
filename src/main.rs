@@ -38,9 +38,9 @@ fn traits_as_parameters() {
         }
     }
     
-    pub fn notify<T: Summary>(item1: T, item2: T) {
-        println!("Breaking news! {}", item.summarize());
-    }
+    // pub fn notify<T: Summary>(item1: T, item2: T) { // both parameters must be of the same type T 
+    //     println!("Breaking news! {}", item.summarize());
+    // }
 
 
     // pub fn notify(item: impl Summary + Display) {};  // syntax sugar
@@ -52,6 +52,7 @@ fn traits_as_parameters() {
     //     U: Clone + Debug
     // {
     // }
+}
 
 fn main() {
     default_implementation();
