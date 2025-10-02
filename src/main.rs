@@ -46,8 +46,12 @@ fn traits_as_parameters() {
     // pub fn notify(item: impl Summary + Display) {};  // syntax sugar
     // pub fn notify<T: Summary + Display>(item: T) {};  // same as above
 
-
-}
+    //  fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {} // multiple trait bounds
+    // fn some_function<T, U>(t: T, u: U) -> i32 // where T: Display + Clone, U: Clone + Debug {} // same as above with where clause
+    //     where T: Display + Clone,
+    //     U: Clone + Debug
+    // {
+    // }
 
 fn main() {
     default_implementation();
